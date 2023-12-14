@@ -1,5 +1,6 @@
-import hiddenElement from './utils/hiddenElement.js';
 import { siteSelectors } from './config.js';
+import generateHiddenCssCode from './utils/generateHiddenCssCode.js';
+import loadCssCode from './utils/loadCssCode.js';
 
 const doit = () => {
   console.log('doit');
@@ -7,7 +8,8 @@ const doit = () => {
   for (let key in siteSelectors) {
     if (currentUrl.includes(key)) {
       const selectors = siteSelectors[key];
-      selectors.forEach(hiddenElement);
+      const code = generateHiddenCssCode(selectors);
+      loadCssCode(code);
     }
   }
 };
