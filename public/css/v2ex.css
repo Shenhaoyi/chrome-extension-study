@@ -1,0 +1,3 @@
+div.content {
+  transform: translateX(calc((310px) / 2)); /* 正文内容居中 */
+}
