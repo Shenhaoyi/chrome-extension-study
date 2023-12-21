@@ -1,0 +1,3 @@
+div.view.column-view {
+  transform: translateX(calc((300px) / 2))
+}
