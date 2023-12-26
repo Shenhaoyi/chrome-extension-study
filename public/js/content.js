@@ -19,8 +19,7 @@ const loadStyle = (filename) => {
   link.type = 'text/css';
   link.rel = 'stylesheet';
   link.href = chrome.runtime.getURL(`/css/${filename}.css`);
-  const head = document.getElementsByTagName('head')[0];
-  head.appendChild(link);
+  (document.head || document.documentElement).appendChild(link);
 };
 
 // 需要加载的 css 文件名
