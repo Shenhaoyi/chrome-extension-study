@@ -1,0 +1,12 @@
+/*搜索栏*/
+div#searchform > div:last-child {
+  justify-content: space-around;
+}
+div#main > div {
+  position: relative;
+}
+div#main > div > div:has(> div#center_col) {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}

@@ -23,7 +23,7 @@ const loadStyle = (filename) => {
 };
 
 // 需要加载的 css 文件名
-const cssFileNameList = ['bilibili', 'v2ex', 'juejin', 'github'];
+const cssFileNameList = ['bilibili', 'v2ex', 'juejin', 'github', 'google'];
 
 const currentUrl = window.location.href;
 // 匹配网站地址就加载
