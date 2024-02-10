@@ -26,7 +26,7 @@ const loadStyle = (filename) => {
 const cssFileNameList = ['bilibili', 'v2ex', 'juejin', 'github', 'google'];
 
 const currentUrl = window.location.href;
-if (currentUrl === 'https://www.douyin.com') {
+if (currentUrl === 'https://www.douyin.com/') {
   // 直接跳转关注页
   window.location = 'https://www.douyin.com/follow';
 }
