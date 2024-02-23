@@ -12,7 +12,7 @@ export const siteSelectors = {
     // 'div#waterFallScrollContainer', // 首页
     // 'div#douyin-right-container > div#slidelist.fullscreen_capture_feedback', // 推荐-单列(也包含关注哪里的)
   ],
-  youtube: ['ytd-two-column-browse-results-renderer[page-subtype="home"]'],
+  // youtube: ['ytd-two-column-browse-results-renderer[page-subtype="home"]'],
   twitter: ['div[role="presentation"]:first-child', 'aside[aria-label="推荐关注"]'],
 };
 
