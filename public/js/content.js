@@ -28,9 +28,9 @@ const cssFileNameList = ['bilibili', 'v2ex', 'juejin', 'github', 'google'];
 const currentUrl = window.location.href;
 // 抖音处理
 if (currentUrl.includes('douyin')) {
-  const list = ['https://www.douyin.com/', 'https://www.douyin.com/discover'];
+  const pathNames = ['/', '/discover'];
   setInterval(() => {
-    if (list.includes(window.location.href)) {
+    if (pathNames.includes(window.location.pathname)) {
       // 直接跳转关注页
       window.location = 'https://www.douyin.com/follow';
     }
