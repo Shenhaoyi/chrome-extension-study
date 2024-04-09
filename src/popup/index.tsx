@@ -1,26 +1,35 @@
-import { useState } from "react"
+import { sendToBackground, sendToContentScript } from "@plasmohq/messaging"
+import { usePort } from "@plasmohq/messaging/hook"
+
+import { Message } from "~const/message"
+import { Port } from "~const/port"
+
+import style from "./index.module.css"
 
 function IndexPopup() {
-  const [data, setData] = useState("")
+  const { data, send, listen } = usePort(Port.DEFAULT)
+  console.dir(data)
+  const handleClick = async () => {
+    // 通过 BG 转发给 CS
+    // const resp = await sendToBackground({
+    //   name: Message.TO_CS,
+    //   body: {
+    //     id: 123
+    //   }
+    // })
+    // console.log(resp)
 
+    // 直接发给 CS
+    const a = sendToContentScript({
+      body: {
+        id: 123
+      }
+    } as any)
+  }
   return (
-    <div
-      style={{
-        padding: 16
-      }}>
-      <h2>
-        Welcome to your{" "}
-        <a href="https://www.plasmo.com" target="_blank">
-          Plasmo
-        </a>{" "}
-        Extension!
-      </h2>
-      <input onChange={(e) => setData(e.target.value)} value={data} />
-      <a href="https://docs.plasmo.com" target="_blank">
-        View Docs
-      </a>
+    <div className={style.container}>
+      <button onClick={handleClick}>开始圈选</button>
     </div>
   )
 }
-
 export default IndexPopup
