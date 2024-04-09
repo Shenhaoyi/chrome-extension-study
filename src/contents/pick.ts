@@ -18,13 +18,15 @@ listen((...s) => {
       picker.stop()
       console.log("Picked: ====================")
       const selector = getPath(el)
+      const origin = window.location.origin;
       // el.style.display = "none"
       sendToBackground({
         name: Message.MAIN,
         body: {
-          selector
-        }
-      })
+          selector,
+          origin,
+        },
+      });
     }
   })
 })

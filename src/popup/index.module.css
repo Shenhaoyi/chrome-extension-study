@@ -5,3 +5,15 @@
   justify-content: center;
   align-items: center;
 }
+
+.li {
+  width: 200px;
+  height: 30px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  /* 不换行 */
+  white-space: nowrap;
+  /* 超出部分隐藏 */
+  text-overflow: ellipsis;
+  /* 超出部分显示省略号 */
+}
