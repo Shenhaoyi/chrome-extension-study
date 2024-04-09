@@ -1,4 +1,4 @@
-import { sendToBackground, sendToContentScript } from "@plasmohq/messaging"
+import { sendToBackground, sendToContentScript } from '@plasmohq/messaging';
 import { usePort } from '@plasmohq/messaging/hook';
 import { Message } from '~const/message';
 import { Port } from '~const/port';
@@ -6,6 +6,8 @@ import { useStorage } from '@plasmohq/storage/hook';
 import style from './index.module.css';
 import { StorageKeys } from '~const/storage';
 import { storage } from '~storage';
+import MyTable from './MyTable';
+import { Button } from 'antd';
 
 function IndexPopup() {
   // const { data, send, listen } = usePort(Port.DEFAULT)
@@ -38,11 +40,11 @@ function IndexPopup() {
     storage.clear();
   };
   return (
-    <>
-      <div className={style.container}>
-        <button onClick={handleClear}>清空 store</button>
+    <div className={style.container}>
+      <div>
+        <Button onClick={handleClear}>清空 store</Button>
 
-        <button onClick={handleClick}>开始圈选</button>
+        <Button onClick={handleClick}>开始圈选</Button>
       </div>
       <ol>
         {getSelectors().map((i, index) => {
@@ -53,7 +55,8 @@ function IndexPopup() {
           );
         })}
       </ol>
-    </>
+      <MyTable></MyTable>
+    </div>
   );
 }
-export default IndexPopup
+export default IndexPopup;
