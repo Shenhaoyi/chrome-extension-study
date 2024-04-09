@@ -10,6 +10,7 @@
     "package": "plasmo package"
   },
   "dependencies": {
+    "pick-dom-element": "^0.2.3",
     "plasmo": "0.85.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"

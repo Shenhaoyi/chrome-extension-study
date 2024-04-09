@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  pick-dom-element:
+    specifier: ^0.2.3
+    version: 0.2.3
   plasmo:
     specifier: 0.85.2
     version: 0.85.2(react-dom@18.2.0)(react@18.2.0)
@@ -4728,6 +4731,10 @@ packages:
       '@types/estree': 1.0.5
       estree-walker: 3.0.3
       is-reference: 3.0.2
+    dev: false
+
+  /pick-dom-element@0.2.3:
+    resolution: {integrity: sha512-XBwCZMMnmZAU68lvizuAluOBpImiE3sgXEbrMjBBJ/SjUiHTeep38oiBL8wWMy9ZXxNk6JvmYRUmGiZnCOvUFw==}
     dev: false
 
   /picocolors@1.0.0:
