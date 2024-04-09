@@ -1,6 +1,5 @@
-const currentUrl = window.location.href
 // 抖音处理
-if (currentUrl.includes("douyin")) {
+if (window.location.href.includes("douyin")) {
   const pathNames = ["/", "/discover"]
   setInterval(() => {
     if (pathNames.includes(window.location.pathname)) {

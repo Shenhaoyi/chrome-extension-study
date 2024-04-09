@@ -26,6 +26,6 @@ const loadStyle = async (filename) => {
 const cssFileNameList = ["bilibili", "v2ex", "juejin", "github", "google"]
 
 // 匹配网站地址就加载
-cssFileNameList.filter((item) => currentUrl.includes(item)).forEach(loadStyle)
-
-const currentUrl = window.location.href
+cssFileNameList
+  .filter((item) => window.location.href.includes(item))
+  .forEach(loadStyle)
