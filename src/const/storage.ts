@@ -1,3 +1,4 @@
 export const StorageKeys = {
-  SELECTOR: "selector"
-}
+  SELECTOR: 'selector',
+  MAIN_SWITCH: 'mainSwitch',
+};

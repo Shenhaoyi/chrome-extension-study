@@ -15,6 +15,8 @@ function IndexPopup() {
 
   const [selector] = useStorage(StorageKeys.SELECTOR, {});
 
+  const [enable, setEnable] = useStorage(StorageKeys.MAIN_SWITCH, false);
+
   const getSelectors = () => {
     const result: string[] = selector[Object.keys(selector)[0]] || [];
     return Array.from(result);
@@ -39,12 +41,19 @@ function IndexPopup() {
   const handleClear = () => {
     storage.clear();
   };
+  const handleSwitch = () => {
+    setEnable(!enable);
+  };
   return (
     <div className={style.container}>
       <div>
         <Button onClick={handleClear}>清空 store</Button>
 
         <Button onClick={handleClick}>开始圈选</Button>
+      </div>
+      <div>
+        {enable ? '已开启' : '已关闭'}
+        <Button onClick={handleSwitch}>切换</Button>
       </div>
       <ol>
         {getSelectors().map((i, index) => {
