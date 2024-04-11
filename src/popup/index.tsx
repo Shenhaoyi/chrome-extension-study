@@ -6,16 +6,15 @@ import { useStorage } from '@plasmohq/storage/hook';
 import style from './index.module.css';
 import { StorageKeys } from '~const/storage';
 import { storage } from '~storage';
-import MyTable from './MyTable';
+import MyTable from './components/MyTable';
 import { Button } from 'antd';
+import Controller from './components/Controller';
 
 function IndexPopup() {
   // const { data, send, listen } = usePort(Port.DEFAULT)
   // console.dir(data)
 
   const [selector] = useStorage(StorageKeys.SELECTOR, {});
-
-  const [enable, setEnable] = useStorage(StorageKeys.MAIN_SWITCH, false);
 
   const getSelectors = () => {
     const result: string[] = selector[Object.keys(selector)[0]] || [];
@@ -41,9 +40,7 @@ function IndexPopup() {
   const handleClear = () => {
     storage.clear();
   };
-  const handleSwitch = () => {
-    setEnable(!enable);
-  };
+
   return (
     <div className={style.container}>
       <div>
@@ -51,10 +48,7 @@ function IndexPopup() {
 
         <Button onClick={handleClick}>开始圈选</Button>
       </div>
-      <div>
-        {enable ? '已开启' : '已关闭'}
-        <Button onClick={handleSwitch}>切换</Button>
-      </div>
+      <Controller></Controller>
       <ol>
         {getSelectors().map((i, index) => {
           return (
