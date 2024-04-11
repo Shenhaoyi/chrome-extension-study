@@ -7,6 +7,7 @@ export const siteSelectors = {
     'div.right-container-inner.scroll-sticky > div:last-child > div.pop-live-small-mode', // 推荐直播
     'div#activity_vote', // 活动条
     'div.adblock-tips', // 顶部广告拦截提示
+    'div.bpx-player-ending-related', // 播放结束推荐
   ],
   douyin: [
     // 'div#waterFallScrollContainer', // 首页
