@@ -16,5 +16,3 @@ export const siteSelectors = {
   // youtube: ['ytd-two-column-browse-results-renderer[page-subtype="home"]'],
   twitter: ['div[role="presentation"]:first-child', 'aside[aria-label="推荐关注"]'],
 };
-
-export const customStyleSites = ['bilibili'];

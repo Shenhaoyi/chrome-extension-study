@@ -1,26 +1,17 @@
 import styleSrc from '~/css';
-import { enabled } from './mainSwitch';
+import type { PlasmoCSConfig } from 'plasmo';
+import { loadStyle } from '~utils/loadStyle';
 
-const loadStyle = async (filename: string) => {
-  const link = document.createElement('link');
-  link.type = 'text/css';
-  link.rel = 'stylesheet';
-  link.href = styleSrc[filename];
-  // link.href = `url:./css/${filename}.css`
-  const container = document.head || document.documentElement;
-  container.appendChild(link);
+export const config: PlasmoCSConfig = {
+  run_at: 'document_start', // 文档解析前执行
 };
 
 const init = async () => {
-  // 判断是否启用
-  if (!(await enabled)) {
-    return;
-  }
   const url = window.location.href;
   // 匹配网站地址就加载
   Object.keys(styleSrc)
     .filter((item) => url.includes(item))
-    .forEach(loadStyle);
+    .forEach((filename) => loadStyle(styleSrc[filename]));
 };
 
 init();
