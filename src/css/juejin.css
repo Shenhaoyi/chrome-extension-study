@@ -1,3 +1,4 @@
 div.view.column-view {
-  transform: translateX(calc((300px) / 2))
+  transform: translateX(calc((300px) / 2));
+  transition: transform 0.3s ease-in-out;
 }

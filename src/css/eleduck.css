@@ -1,3 +1,4 @@
 div.app-layout.has-sider {
   transform: translateX(160px)  !important;
+  transition: transform 0.3s ease-in-out;
 }
