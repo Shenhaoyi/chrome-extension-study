@@ -1,13 +1,9 @@
 div.right-container {
-  margin-left: 0;
-  margin-right: 30px;
 }
 
 div.left-container {
-  margin-right: auto;
+  margin-left: auto;
 }
 
 .video-container-v1 {
-  /* 子元素倒着排列 */
-  flex-direction: row-reverse;
 }
