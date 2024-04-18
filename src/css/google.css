@@ -9,5 +9,5 @@ div#main > div > div:has(> div#center_col) {
   position: absolute;
   right: 50%;
   transform: translateX(50%);
-  transition: transform 0.3s ease-in;
+  will-change: transform;
 }

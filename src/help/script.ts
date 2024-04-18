@@ -1,4 +1,4 @@
-import { loadCssCode } from '~utils/loadStyle';
+import { loadCssCodeAsStyle } from '~utils/loadStyle';
 import generateHiddenCssCode from '../utils/generateHiddenCssCode';
 import { siteSelectors } from './config';
 
@@ -9,7 +9,7 @@ const doit = () => {
     if (currentUrl.includes(key)) {
       const selectors = siteSelectors[key];
       const code = generateHiddenCssCode(selectors);
-      loadCssCode(code);
+      loadCssCodeAsStyle(code);
     }
   }
 };

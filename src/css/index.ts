@@ -1,9 +1,9 @@
-import bilibili from 'url:./bilibili.css';
-import github from 'url:./github.css';
-import google from 'url:./google.css';
-import juejin from 'url:./juejin.css';
-import v2ex from 'url:./v2ex.css';
-import eleduck from 'url:./eleduck.css';
+import bilibili from 'data-text:./bilibili.css';
+import github from 'data-text:./github.css';
+import google from 'data-text:./google.css';
+import juejin from 'data-text:./juejin.css';
+import v2ex from 'data-text:./v2ex.css';
+import eleduck from 'data-text:./eleduck.css';
 
 export default {
   bilibili,

@@ -7,13 +7,15 @@ function insertAtFirst(dom: HTMLElement) {
   }
 }
 
-export function loadCssCode(code: string) {
+// html 解析器看到就能直接解析到，放到 head 前，一定能保证优先解析
+export function loadCssCodeAsStyle(code: string) {
   const style = document.createElement('style');
   style.appendChild(document.createTextNode(code));
   insertAtFirst(style);
 }
 
-export function loadStyle(path: string) {
+// 缺点：即使放在 head 可能造成闪烁，涉及到资源加载线程
+export function loadCssFileAsLink(path: string) {
   const link = document.createElement('link');
   link.type = 'text/css';
   link.rel = 'stylesheet';

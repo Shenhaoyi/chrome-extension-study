@@ -1,4 +1,3 @@
 div#repo-content-pjax-container > div:last-child {
   transform: translateX(calc((296px) / 2));
-  transition: transform 0.1s ease-in-out;
 }
