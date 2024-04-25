@@ -9,6 +9,7 @@ import { storage } from '~storage';
 import MyTable from './components/MyTable';
 import { Button } from 'antd';
 import Controller from './components/Controller';
+import { getExtTabs } from '~utils/getTabs';
 
 function IndexPopup() {
   // const { data, send, listen } = usePort(Port.DEFAULT)
@@ -31,7 +32,7 @@ function IndexPopup() {
     // console.log(resp)
 
     // 直接发给 CS
-    const a = sendToContentScript({
+    sendToContentScript({
       body: {
         id: 123,
       },
@@ -40,12 +41,16 @@ function IndexPopup() {
   const handleClear = () => {
     storage.clear();
   };
-
+  const goTabs = () => {
+    getExtTabs().create({
+      url: 'tabs/index.html',
+    });
+  };
   return (
     <div className={style.container}>
       <div>
         <Button onClick={handleClear}>清空 store</Button>
-
+        <Button onClick={goTabs}>go tabs</Button>
         <Button onClick={handleClick}>开始圈选</Button>
       </div>
       <Controller></Controller>
