@@ -10,6 +10,7 @@ import MyTable from './components/MyTable';
 import { Button } from 'antd';
 import Controller from './components/Controller';
 import { getExtTabs } from '~utils/getTabs';
+import '~styles/tailwind.css';
 
 function IndexPopup() {
   // const { data, send, listen } = usePort(Port.DEFAULT)
@@ -47,7 +48,7 @@ function IndexPopup() {
     });
   };
   return (
-    <div className={style.container}>
+    <div className="w-96 h-96">
       <div>
         <Button onClick={handleClear}>清空 store</Button>
         <Button onClick={goTabs}>go tabs</Button>
