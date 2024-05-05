@@ -9,6 +9,7 @@ interface ForbiddenSite {
   name: string;
   forbiddenPaths: string[];
   replaceUrl: string;
+  force?: boolean;
 }
 const forbiddenSites: ForbiddenSite[] = [
   {
@@ -21,13 +22,25 @@ const forbiddenSites: ForbiddenSite[] = [
     forbiddenPaths: ['/', '/explore'],
     replaceUrl: 'https://www.xiaohongshu.com/notification',
   },
+  {
+    name: 'v2ex',
+    forbiddenPaths: ['/'],
+    force: true,
+    replaceUrl: 'https://www.google.com',
+  },
+  {
+    name: 'weibo',
+    forbiddenPaths: ['/'],
+    force: true,
+    replaceUrl: 'https://www.google.com',
+  },
 ];
 
 const site = forbiddenSites.find((item) => window.location.href.includes(item.name));
 
 const doForbidden = () => {
-  const { forbiddenPaths, replaceUrl } = site;
-  if (forbiddenPaths.includes(window.location.pathname)) {
+  const { forbiddenPaths, replaceUrl, force } = site;
+  if (force || forbiddenPaths.includes(window.location.pathname)) {
     window.location.replace(replaceUrl);
   }
 };
