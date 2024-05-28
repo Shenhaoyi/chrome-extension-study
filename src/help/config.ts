@@ -12,7 +12,10 @@ export const siteSelectors = {
   douyin: [
     // 'div#waterFallScrollContainer', // 首页
     // 'div#douyin-right-container > div#slidelist.fullscreen_capture_feedback', // 推荐-单列(也包含关注哪里的)
+    'div[data-e2e="douyin-navigation"] > div > div > div > div:not(:nth-child(3), :nth-child(4), :nth-child(5))', // 侧边栏
+    'pace-island#island_b69f5, pace-island#island_076c3', // 操作按钮栏
   ],
   // youtube: ['ytd-two-column-browse-results-renderer[page-subtype="home"]'],
   'x.com': ['div[role="tablist"] > div[role="presentation"]:first-child', 'aside[aria-label="推荐关注"]'],
 };
+
