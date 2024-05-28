@@ -8,7 +8,7 @@ interface MathQuestion {
 
 const randomMathQuestion = (min = 10, max = 100): MathQuestion => {
   const num = Math.floor(Math.random() * (max - min) + min);
-  const multiple = Math.floor(Math.random() * 10 + 1);
+  const multiple = Math.floor(Math.random() * 100);
   const question = `你拥有的数字是${num}，请输入这个数字的 ${multiple} 倍：`;
   const answer = num * multiple;
   return { question, answer };
