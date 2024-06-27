@@ -1,25 +1,27 @@
 import scriptSrc from 'url:../help/script';
+import filterResponseSrc from 'url:../utils/filterResponse';
 import type { PlasmoCSConfig } from 'plasmo';
 
 export const config: PlasmoCSConfig = {
   run_at: 'document_start', // 文档解析前执行
 };
-const init = async () => {
-  console.log('content script');
+
+function loadScript(scriptSrc: string) {
   const script = document.createElement('script');
   script.src = scriptSrc;
   script.type = 'module';
-
-  const appendScript = () => {
-    (document.head || document.documentElement).appendChild(script);
-  };
-
   script.onload = function () {
     script.remove();
-    console.log('script loaded');
+    console.log('injected script loaded');
   };
+  (document.head || document.documentElement).appendChild(script);
+}
 
-  appendScript();
+const init = async () => {
+  loadScript(scriptSrc);
+  if (window.location.href.includes('bilibili')) {
+    loadScript(filterResponseSrc);
+  }
 };
 
 init();
