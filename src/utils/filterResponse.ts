@@ -10,10 +10,9 @@
       const data = await clonedResponse.json();
       // Modify the response data as needed
       data.data.result = data.data.result.filter((item: any) => {
-        const date = new Date(item.pubdate * 1000);
-        console.log(date);
-
-        return date.getFullYear() >= 2024;
+        const { pubdate, play } = item;
+        const date = new Date(pubdate * 1000);
+        return date.getFullYear() >= 2024 && play > 1000;
       });
 
       // data.someField = 'modified_value';
